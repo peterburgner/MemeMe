@@ -28,6 +28,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>MemeMe requires camera access so you can take new photos for your memes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MemeMe requires access to your photo library so you can select a photo from your library for a meme</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MemeMe requires write access to your photo library to save your memes</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
