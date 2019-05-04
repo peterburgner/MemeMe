@@ -19,8 +19,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //        imagePickerController.delegate = imagePickerDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
