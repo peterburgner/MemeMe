@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottom.defaultTextAttributes = memeTextAttributes
         bottom.textAlignment = NSTextAlignment.center
         
-//        resetButton.isEnabled = false
+        resetButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,16 +68,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } else {
             shareButton.isEnabled = false
         }
-        //        // reset
-        //        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
-        //            resetButton.isEnabled = true
-        //        }
+        // reset button
+        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
+            resetButton.isEnabled = true
+        }
     }
     
     func reset() {
         imageView.image = UIImage()
         top.text = "TOP"
         bottom.text = "BOTTOM"
+        resetButton.isEnabled = false
     }
     
     
@@ -124,6 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = image
             picker.dismiss(animated: false, completion: nil)
+            prepareUI()
         }
     }
     
@@ -154,7 +156,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         subviews[0].isHidden = true
         subviews[2].isHidden = true
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
