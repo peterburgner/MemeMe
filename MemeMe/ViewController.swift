@@ -16,11 +16,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var top: UITextField!
     @IBOutlet weak var bottom: UITextField!
-    
+    let memeDelegate = MemeTextDelegate()
     
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        top.delegate = memeDelegate
+        bottom.delegate = memeDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
