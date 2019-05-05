@@ -61,6 +61,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    func prepareUI() {
+        // shareButton
+        if (top.text != "TOP") && (bottom.text != "BOTTOM") && (imageView.image != nil) {
+            shareButton.isEnabled = true
+        } else {
+            shareButton.isEnabled = false
+        }
+        //        // reset
+        //        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
+        //            resetButton.isEnabled = true
+        //        }
+    }
+    
+    func reset() {
+        imageView.image = UIImage()
+        top.text = "TOP"
+        bottom.text = "BOTTOM"
+    }
+    
     
     // MARK: IBActions
     @IBAction func pickImage() {
@@ -79,15 +98,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func reset() {
-        imageView.image = UIImage()
-        top.text = "TOP"
-        bottom.text = "BOTTOM"
-    }
-    
     @IBAction func shareMeme(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [saveMeme().memedImage], applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
+    }
+    
+    @IBAction func resetAlert(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "Reset Meme", message: "Your meme will be deleted. Proceed?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancel)
+        let okay = UIAlertAction(title: "OK", style: .default) { action in
+            self.dismiss(animated: true, completion: nil)
+            self.reset()
+        }
+        alertController.addAction(okay)
+
+        present(alertController, animated: true, completion: nil)
     }
 
     
@@ -129,19 +157,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         return memedImage
-    }
-    
-    func prepareUI() {
-        // shareButton
-        if (top.text != "TOP") && (bottom.text != "BOTTOM") && (imageView.image != nil) {
-            shareButton.isEnabled = true
-        } else {
-            shareButton.isEnabled = false
-        }
-//        // reset
-//        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
-//            resetButton.isEnabled = true
-//        }
     }
     
     

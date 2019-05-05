@@ -46,7 +46,7 @@
                                     <navigationItem title="Create Meme" id="Mva-nh-U3K">
                                         <barButtonItem key="leftBarButtonItem" title="Reset" id="ing-Vb-EXw">
                                             <connections>
-                                                <action selector="reset" destination="BYZ-38-t0r" id="yMx-KU-VW7"/>
+                                                <action selector="resetAlert:" destination="BYZ-38-t0r" id="qh1-Lk-fbL"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="m5u-dn-YNv">
