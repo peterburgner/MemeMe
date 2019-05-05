@@ -20,6 +20,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottom: UITextField!
     let memeDelegate = MemeTextDelegate()
     
+    struct Meme {
+        var topText: String = ""
+        var bottomText: String = ""
+        var originalImage = UIImage()
+        var memedImage = UIImage()
+    }
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -27,29 +34,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeWidth: -5
     ]
     
+    
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         top.delegate = memeDelegate
         top.defaultTextAttributes = memeTextAttributes
         top.textAlignment = NSTextAlignment.center
         bottom.delegate = memeDelegate
         bottom.defaultTextAttributes = memeTextAttributes
         bottom.textAlignment = NSTextAlignment.center
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         photoLibraryButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+        //     TODO:    shareButton.isEnabled =
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
- 
     }
+    
     
     // MARK: IBActions
     @IBAction func pickImage() {
@@ -73,7 +82,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         top.text = "TOP"
         bottom.text = "BOTTOM"
     }
-
+    
+    
     // MARK: Functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -84,7 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottom.isEditing {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
@@ -98,6 +108,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
+    func save() -> Meme {
+        return Meme(topText: top.text!, bottomText: bottom.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return memedImage
+    }
+    
+    
     // MARK: NSNotifications
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -108,7 +134,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
-
-
 }
 
