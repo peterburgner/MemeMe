@@ -20,11 +20,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottom: UITextField!
     let memeDelegate = MemeTextDelegate()
     
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
+        NSAttributedString.Key.strokeWidth: -5
+    ]
+    
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         top.delegate = memeDelegate
+        top.defaultTextAttributes = memeTextAttributes
+        top.textAlignment = NSTextAlignment.center
         bottom.delegate = memeDelegate
+        bottom.defaultTextAttributes = memeTextAttributes
+        bottom.textAlignment = NSTextAlignment.center
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
