@@ -45,12 +45,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottom.delegate = memeDelegate
         bottom.defaultTextAttributes = memeTextAttributes
         bottom.textAlignment = NSTextAlignment.center
+        
+//        resetButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         photoLibraryButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
-        //     TODO:    shareButton.isEnabled =
+        prepareUI()
         subscribeToKeyboardNotifications()
     }
     
@@ -100,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc func keyboardWillDisappear(_ notification:Notification) {
         view.frame.origin.y = 0
+        prepareUI()
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -121,6 +124,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         return memedImage
+    }
+    
+    func prepareUI() {
+        // shareButton
+        if (top.text != "TOP") && (bottom.text != "BOTTOM") && (imageView.image != nil) {
+            shareButton.isEnabled = true
+        } else {
+            shareButton.isEnabled = false
+        }
+//        // reset
+//        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
+//            resetButton.isEnabled = true
+//        }
     }
     
     
