@@ -44,6 +44,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Create Meme" id="Mva-nh-U3K">
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="ing-Vb-EXw">
+                                            <connections>
+                                                <action selector="reset" destination="BYZ-38-t0r" id="yMx-KU-VW7"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="m5u-dn-YNv"/>
                                     </navigationItem>
                                 </items>
@@ -87,6 +92,8 @@
                         <outlet property="cameraButton" destination="ikg-VZ-tn3" id="LFJ-na-i4E"/>
                         <outlet property="imageView" destination="3rd-Is-4qe" id="R1K-66-qIb"/>
                         <outlet property="photoLibraryButton" destination="kCv-5t-vYc" id="2Lz-1b-CQu"/>
+                        <outlet property="resetButton" destination="ing-Vb-EXw" id="KMs-xH-1cF"/>
+                        <outlet property="shareButton" destination="m5u-dn-YNv" id="YLJ-Fe-WhW"/>
                         <outlet property="top" destination="6rP-P7-7E7" id="E99-a2-lgq"/>
                     </connections>
                 </viewController>

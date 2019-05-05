@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
@@ -46,6 +48,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.cameraDevice = UIImagePickerController.CameraDevice.rear
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func reset() {
+        imageView.image = UIImage()
+        top.text = "TOP"
+        bottom.text = "BOTTOM"
+    }
 
     // MARK: Functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -54,6 +62,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             picker.dismiss(animated: false, completion: nil)
         }
     }
+    
+    
 
 }
 
