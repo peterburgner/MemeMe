@@ -100,7 +100,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareMeme(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [saveMeme().memedImage], applicationActivities: nil)
+        let meme = saveMeme()
+        let activityController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
     }
     
