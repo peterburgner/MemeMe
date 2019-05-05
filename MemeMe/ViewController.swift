@@ -85,6 +85,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottom.text = "BOTTOM"
     }
     
+    @IBAction func shareMeme(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [saveMeme().memedImage], applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
+    }
+
     
     // MARK: Functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -111,7 +116,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
-    func save() -> Meme {
+    func saveMeme() -> Meme {
         return Meme(topText: top.text!, bottomText: bottom.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
     }
     

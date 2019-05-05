@@ -49,7 +49,11 @@
                                                 <action selector="reset" destination="BYZ-38-t0r" id="yMx-KU-VW7"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="m5u-dn-YNv"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="m5u-dn-YNv">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="wLC-wV-2yO"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -93,7 +97,7 @@
                         <outlet property="imageView" destination="3rd-Is-4qe" id="R1K-66-qIb"/>
                         <outlet property="photoLibraryButton" destination="kCv-5t-vYc" id="2Lz-1b-CQu"/>
                         <outlet property="resetButton" destination="ing-Vb-EXw" id="KMs-xH-1cF"/>
-                        <outlet property="shareButton" destination="m5u-dn-YNv" id="YLJ-Fe-WhW"/>
+                        <outlet property="shareButton" destination="m5u-dn-YNv" id="8GK-AK-ejS"/>
                         <outlet property="top" destination="6rP-P7-7E7" id="E99-a2-lgq"/>
                     </connections>
                 </viewController>
