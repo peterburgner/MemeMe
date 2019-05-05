@@ -150,12 +150,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
+        let subviews = view.subviews
+        subviews[0].isHidden = true
+        subviews[2].isHidden = true
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
+        subviews[0].isHidden = false
+        subviews[2].isHidden = false
         return memedImage
     }
     
