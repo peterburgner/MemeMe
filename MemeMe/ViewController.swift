@@ -14,7 +14,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var top: UITextField!
+    @IBOutlet weak var bottom: UITextField!
+    
     
     // MARK: View Functions
     override func viewDidLoad() {

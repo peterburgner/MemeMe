@@ -83,9 +83,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottom" destination="sKv-lW-HAD" id="mYd-q3-srQ"/>
                         <outlet property="cameraButton" destination="ikg-VZ-tn3" id="LFJ-na-i4E"/>
                         <outlet property="imageView" destination="3rd-Is-4qe" id="R1K-66-qIb"/>
                         <outlet property="photoLibraryButton" destination="kCv-5t-vYc" id="2Lz-1b-CQu"/>
+                        <outlet property="top" destination="6rP-P7-7E7" id="E99-a2-lgq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
