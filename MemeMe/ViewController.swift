@@ -21,15 +21,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottom: UITextField!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
-    let memeDelegate = MemeTextDelegate()
     
-    struct Meme {
-        var topText: String = ""
-        var bottomText: String = ""
-        var originalImage = UIImage()
-        var memedImage = UIImage()
-    }
-    var meme = Meme()
+    let memeDelegate = MemeTextDelegate()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -161,7 +155,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func saveMeme(generatedMemeImage: UIImage) {
-        meme = Meme(topText: top.text!, bottomText: bottom.text!, originalImage: imageView.image!, memedImage: generatedMemeImage)
+        let meme = Meme(topText: top.text!, bottomText: bottom.text!, originalImage: imageView.image!, memedImage: generatedMemeImage)
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {

@@ -13,6 +13,7 @@
 		04B7F972227E2AE3008F07EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B7F971227E2AE3008F07EC /* Assets.xcassets */; };
 		04B7F975227E2AE3008F07EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B7F973227E2AE3008F07EC /* LaunchScreen.storyboard */; };
 		04B7F97D227E62E6008F07EC /* MemeTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7F97C227E62E6008F07EC /* MemeTextDelegate.swift */; };
+		04E0C0F1229C8CA4006CD9D5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0C0F0229C8CA4006CD9D5 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		04B7F974227E2AE3008F07EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B7F976227E2AE3008F07EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B7F97C227E62E6008F07EC /* MemeTextDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTextDelegate.swift; sourceTree = "<group>"; };
+		04E0C0F0229C8CA4006CD9D5 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				04B7F96A227E2AE1008F07EC /* AppDelegate.swift */,
 				04B7F96C227E2AE1008F07EC /* ViewController.swift */,
 				04B7F97C227E62E6008F07EC /* MemeTextDelegate.swift */,
+				04E0C0F0229C8CA4006CD9D5 /* Meme.swift */,
 				04B7F96E227E2AE1008F07EC /* Main.storyboard */,
 				04B7F971227E2AE3008F07EC /* Assets.xcassets */,
 				04B7F973227E2AE3008F07EC /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B7F96D227E2AE1008F07EC /* ViewController.swift in Sources */,
+				04E0C0F1229C8CA4006CD9D5 /* Meme.swift in Sources */,
 				04B7F97D227E62E6008F07EC /* MemeTextDelegate.swift in Sources */,
 				04B7F96B227E2AE1008F07EC /* AppDelegate.swift in Sources */,
 			);
