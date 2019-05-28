@@ -19,7 +19,6 @@ class MemeDetailViewController: UIViewController {
         imageView.image = meme.memedImage
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(edit))
         navigationItem.rightBarButtonItem = editButton
-        // TODO: hide tab bar
     }
     
     // MARK: Functions
