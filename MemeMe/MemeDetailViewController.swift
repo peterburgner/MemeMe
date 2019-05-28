@@ -10,10 +10,25 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
     
+    // MARK: Properties
     @IBOutlet weak var imageView: UIImageView!
     var meme = Meme()
     
+    // MARK: View Functions
     override func viewWillAppear(_ animated: Bool) {
         imageView.image = meme.memedImage
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(edit))
+        navigationItem.rightBarButtonItem = editButton
     }
+    
+    // MARK: Functions
+    @objc func edit() {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        // TODO: fill in meme values
+//        controller.top.text = meme.topText
+//        controller.bottom.text = meme.bottomText
+//        controller.imageView.image = meme.originalImage
+        present(controller, animated: true, completion: nil)
+    }
+
 }
