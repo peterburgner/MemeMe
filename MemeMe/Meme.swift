@@ -21,4 +21,11 @@ class Meme {
         self.memedImage = memedImage
     }
     
+    init() {
+        self.topText = ""
+        self.bottomText = ""
+        self.originalImage = UIImage()
+        self.memedImage = UIImage()
+    }
+    
 }

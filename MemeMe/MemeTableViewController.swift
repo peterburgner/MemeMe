@@ -17,7 +17,10 @@ class MemeTableViewController: UITableViewController {
     
     // MARK: Table Functions
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Add detail view
+        let memes = appDelegate.memes
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        controller.meme = memes[indexPath.row]
+        navigationController!.pushViewController(controller, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

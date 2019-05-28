@@ -16,7 +16,10 @@ class MemeCollectionViewController: UICollectionViewController {
     
     // MARK: Collection Functions
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Add detail view
+        let memes = appDelegate.memes
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        controller.meme = memes[indexPath.row]
+        navigationController!.pushViewController(controller, animated: true)
     }
     
     

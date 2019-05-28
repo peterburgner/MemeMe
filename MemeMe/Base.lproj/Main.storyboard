@@ -79,6 +79,35 @@
             </objects>
             <point key="canvasLocation" x="144.92753623188406" y="-569.19642857142856"/>
         </scene>
+        <!--Meme-->
+        <scene sceneID="CFJ-4z-hy1">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" title="Meme" id="fYA-yg-Jl0" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JGT-Gp-0uy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upN-9s-aCZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="upN-9s-aCZ" firstAttribute="leading" secondItem="TO6-Vp-Xnq" secondAttribute="leading" id="8KJ-wF-LwY"/>
+                            <constraint firstItem="upN-9s-aCZ" firstAttribute="trailing" secondItem="TO6-Vp-Xnq" secondAttribute="trailing" id="XiG-ch-NXa"/>
+                            <constraint firstItem="upN-9s-aCZ" firstAttribute="top" secondItem="TO6-Vp-Xnq" secondAttribute="top" id="fE3-6p-Rlk"/>
+                            <constraint firstAttribute="bottom" secondItem="upN-9s-aCZ" secondAttribute="bottom" id="ntw-Mk-8pb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TO6-Vp-Xnq"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="upN-9s-aCZ" id="zYP-n3-UXo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMW-Qt-SUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324.6376811594205" y="-927.45535714285711"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uUV-9x-OHE">
             <objects>
@@ -132,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="145" y="120"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +282,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EWU-Hc-d8S"/>
+        <segue reference="dqa-QL-gif"/>
     </inferredMetricsTieBreakers>
 </document>
