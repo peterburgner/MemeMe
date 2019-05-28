@@ -11,7 +11,19 @@ import UIKit
 class MemeCollectionViewController: UICollectionViewController {
     
     // MARK: Properties
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    // MARK: View Functions
+    override func viewDidLoad() {
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
     
     
     // MARK: Collection Functions
