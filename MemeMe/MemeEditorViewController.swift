@@ -24,6 +24,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     let memeDelegate = MemeTextDelegate()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var meme = Meme()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -39,6 +40,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         configureTextfield(textfield: top)
         configureTextfield(textfield: bottom)
+        
+        if (meme.topText != "") {
+            top.text = meme.topText
+        }
+        if (meme.bottomText != "") {
+            bottom.text = meme.bottomText
+        }
+        if (meme.originalImage != UIImage()) {
+            imageView.image = meme.originalImage
+        }
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {

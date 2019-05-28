@@ -11,8 +11,8 @@ import UIKit
 class Meme {
     var topText: String
     var bottomText: String
-    var originalImage = UIImage()
-    var memedImage = UIImage()
+    var originalImage: UIImage
+    var memedImage: UIImage
     
     init(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
         self.topText = topText
@@ -26,6 +26,10 @@ class Meme {
         self.bottomText = ""
         self.originalImage = UIImage()
         self.memedImage = UIImage()
+    }
+    
+    func isEmpty() -> Bool {
+        return ( self.topText == "" && self.bottomText == "" && self.originalImage == UIImage() && self.memedImage == UIImage() )
     }
     
 }
