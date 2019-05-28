@@ -12,7 +12,7 @@ class MemeTableViewController: UITableViewController {
     
     // MARK: Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let memes = [Meme(topText: "Top text", bottomText: "Bottom", originalImage: UIImage(), memedImage: UIImage())]
+
     
     
     // MARK: Table Functions
@@ -21,10 +21,12 @@ class MemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let memes = appDelegate.memes
         return memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let memes = appDelegate.memes
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell")!
         
         cell.textLabel?.text = memes[indexPath.row].topText
