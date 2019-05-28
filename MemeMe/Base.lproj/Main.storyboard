@@ -82,7 +82,7 @@
         <!--Meme-->
         <scene sceneID="CFJ-4z-hy1">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" title="Meme" id="fYA-yg-Jl0" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" title="Meme" hidesBottomBarWhenPushed="YES" id="fYA-yg-Jl0" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JGT-Gp-0uy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
