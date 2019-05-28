@@ -12,7 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: Properties
 
-    @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
@@ -39,8 +39,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         configureTextfield(textfield: top)
         configureTextfield(textfield: bottom)
-        
-        resetButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,18 +60,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } else {
             shareButton.isEnabled = false
         }
-        // reset button
-        if (top.text != "TOP") || (bottom.text != "BOTTOM") || (imageView.image != nil) {
-            resetButton.isEnabled = true
-        }
-    }
-    
-    func reset() {
-        imageView.image = UIImage()
-        top.text = "TOP"
-        bottom.text = "BOTTOM"
-        shareButton.isEnabled = false
-        resetButton.isEnabled = false
     }
     
     func configureTextfield(textfield: UITextField) {
@@ -99,6 +85,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated:true, completion:nil)
         prepareUI()
     }
+       
+    @IBAction func cancel(_ sender: Any) {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeTabBarController") as! UITabBarController
+        show(controller, sender: self)
+    }
     
     @IBAction func shareMeme(_ sender: Any) {
         let generatedMemeImage = generateMemedImage()
@@ -111,22 +102,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         present(activityController, animated: true, completion: nil)
     }
-    
-    @IBAction func resetAlert(_ sender: AnyObject) {
-        let alertController = UIAlertController(title: "Reset Meme", message: "Your meme will be deleted. Proceed?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .default) { action in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alertController.addAction(cancel)
-        let okay = UIAlertAction(title: "OK", style: .default) { action in
-            self.dismiss(animated: true, completion: nil)
-            self.reset()
-        }
-        alertController.addAction(okay)
-
-        present(alertController, animated: true, completion: nil)
-    }
-
     
     // MARK: Functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

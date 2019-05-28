@@ -13,7 +13,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hjP-dQ-znS">
             <objects>
-                <tabBarController id="1Zg-LM-08q" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MemeTabBarController" id="1Zg-LM-08q" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MpI-lV-MC9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +31,7 @@
         <!--Memes-->
         <scene sceneID="WaI-sT-dJq">
             <objects>
-                <collectionViewController title="Memes" id="cut-KN-W8T" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MemeCollectionViewController" title="Memes" id="cut-KN-W8T" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6iS-Ni-52B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,7 @@
         <!--Memes-->
         <scene sceneID="jJp-lf-Jbh">
             <objects>
-                <tableViewController title="Memes" id="VNG-DD-l5k" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MemeTableViewController" title="Memes" id="VNG-DD-l5k" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N9b-bf-QIK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKN-No-CV1">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dO1-wQ-xdf"/>
                                     <barButtonItem systemItem="camera" id="ikg-VZ-tn3">
@@ -150,16 +150,16 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3rd-Is-4qe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAd-kK-yhC">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Create Meme" id="Mva-nh-U3K">
-                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="ing-Vb-EXw">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ing-Vb-EXw">
                                             <connections>
-                                                <action selector="resetAlert:" destination="BYZ-38-t0r" id="qh1-Lk-fbL"/>
+                                                <action selector="cancel:" destination="BYZ-38-t0r" id="vkb-ue-UEJ"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="m5u-dn-YNv">
@@ -177,7 +177,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKv-lW-HAD">
-                                <rect key="frame" x="20" y="770" width="374" height="28"/>
+                                <rect key="frame" x="20" y="765" width="374" height="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -208,10 +208,10 @@
                     <connections>
                         <outlet property="bottom" destination="sKv-lW-HAD" id="mYd-q3-srQ"/>
                         <outlet property="cameraButton" destination="ikg-VZ-tn3" id="LFJ-na-i4E"/>
+                        <outlet property="cancelButton" destination="ing-Vb-EXw" id="Qba-qD-10f"/>
                         <outlet property="imageView" destination="3rd-Is-4qe" id="R1K-66-qIb"/>
                         <outlet property="navigationBar" destination="TAd-kK-yhC" id="sO0-M8-WWs"/>
                         <outlet property="photoLibraryButton" destination="kCv-5t-vYc" id="2Lz-1b-CQu"/>
-                        <outlet property="resetButton" destination="ing-Vb-EXw" id="KMs-xH-1cF"/>
                         <outlet property="shareButton" destination="m5u-dn-YNv" id="8GK-AK-ejS"/>
                         <outlet property="toolbar" destination="IKN-No-CV1" id="oyd-rf-TNy"/>
                         <outlet property="top" destination="6rP-P7-7E7" id="E99-a2-lgq"/>
