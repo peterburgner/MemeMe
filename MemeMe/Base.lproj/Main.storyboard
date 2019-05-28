@@ -278,7 +278,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="collection_30x30" width="30" height="30"/>
+        <image name="collection_30x30" width="30" height="30.5"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
