@@ -87,8 +87,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
        
     @IBAction func cancel(_ sender: Any) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeTabBarController") as! UITabBarController
-        show(controller, sender: self)
+        showMemes()
     }
     
     @IBAction func shareMeme(_ sender: Any) {
@@ -98,12 +97,19 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             (activity, completed, items, error) in
             if (completed){
                 self.saveMeme(generatedMemeImage: generatedMemeImage)
+                self.showMemes()
             }
         }
         present(activityController, animated: true, completion: nil)
     }
     
     // MARK: Functions
+    func showMemes() {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeTabBarController") as! UITabBarController
+        show(controller, sender: self)
+    }
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = image
