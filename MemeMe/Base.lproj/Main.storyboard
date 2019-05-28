@@ -67,7 +67,7 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Collection" id="LLi-Mv-lfw"/>
-                    <navigationItem key="navigationItem" title="Memes" id="fy1-Fp-xel">
+                    <navigationItem key="navigationItem" title="My Memes" id="fy1-Fp-xel">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Y1-wj-spN">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="EWU-Hc-d8S"/>
@@ -149,7 +149,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Table" id="Pbf-bD-bLx"/>
-                    <navigationItem key="navigationItem" title="Memes" id="egc-Z0-OOm">
+                    <navigationItem key="navigationItem" title="My Memes" id="egc-Z0-OOm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ag0-pm-tcT">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="dqa-QL-gif"/>
@@ -282,6 +282,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dqa-QL-gif"/>
+        <segue reference="EWU-Hc-d8S"/>
     </inferredMetricsTieBreakers>
 </document>
