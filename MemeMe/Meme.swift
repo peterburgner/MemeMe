@@ -28,8 +28,4 @@ class Meme {
         self.memedImage = UIImage()
     }
     
-    func isEmpty() -> Bool {
-        return ( self.topText == "" && self.bottomText == "" && self.originalImage == UIImage() && self.memedImage == UIImage() )
-    }
-    
 }
